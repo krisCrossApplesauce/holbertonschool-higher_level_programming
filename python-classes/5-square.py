@@ -2,7 +2,6 @@
 """Write a class Square that defines a square (based on 4-square.py)"""
 
 
-
 class Square:
     """square but now with a method that prints the square"""
     def __init__(self, size):
