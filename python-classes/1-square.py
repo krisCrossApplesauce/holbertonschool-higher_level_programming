@@ -3,7 +3,7 @@
 
 
 class Square:
-    """wow, it's a square"""
+    """the new and improved square! now with the size attribute"""
     __size = None
 
     def __init__(self, new_size=None):
