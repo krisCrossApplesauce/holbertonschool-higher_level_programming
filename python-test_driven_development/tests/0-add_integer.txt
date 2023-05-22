@@ -2,15 +2,15 @@
 
 'Function to test:  add_integer()'
 
+>>> add_integer = __import__('0-add_integer').add_integer
+
 >>> add_integer(2, 5)
 7
 
 >>> add_integer(3.14, 7.96)
-11
+10
 
 >>> add_integer("peepee", "poopoo")
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
-
-'i dont understand this in the slightest'
