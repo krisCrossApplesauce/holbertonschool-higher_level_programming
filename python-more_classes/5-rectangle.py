@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Write a class Rectangle that defines a rectangle (based on 3-rectangle)"""
+"""Write a class Rectangle that defines a rectangle (based on 4-rectangle)"""
 
 
 class Rectangle:
-    """rectangle but now with __repr__"""
+    """rectangle but now with __del__"""
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -38,6 +38,9 @@ class Rectangle:
 
     def __repr__(self):
         return ("Rectangle({}, {})".format(self.__width, self.__height))
+
+    def __del__(self):
+        print("Bye rectangle...")
 
     @property
     def width(self):

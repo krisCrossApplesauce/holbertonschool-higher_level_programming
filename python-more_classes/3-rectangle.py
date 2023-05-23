@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """rectangle but now with print() and str()"""
+    """rectangle but now with __str__"""
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
