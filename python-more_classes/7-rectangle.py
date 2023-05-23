@@ -35,7 +35,7 @@ class Rectangle:
         if self.__width != 0 and self.__width != 0:
             for i in range(self.__height):
                 for ii in range(self.__width):
-                    string += str(Rectangle.print_symbol)
+                    string += str(self.print_symbol)
                 if i + 1 != self.__height:
                     string += "\n"
         return string
