@@ -2,6 +2,8 @@
 
 'Function to test:  add_integer()'
 
+>>> import sys
+
 >>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(2, 5)
@@ -14,3 +16,13 @@
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> add_integer(sys.float_info.max * sys.float_info.max, 5)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
