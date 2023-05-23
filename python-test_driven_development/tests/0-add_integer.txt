@@ -6,23 +6,42 @@
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
+'both ints'
 >>> add_integer(2, 5)
 7
 
+'both floats'
 >>> add_integer(3.14, 7.96)
 10
 
+'both strings'
 >>> add_integer("peepee", "poopoo")
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
+'a overflow float (inf)'
 >>> add_integer(sys.float_info.max * sys.float_info.max, 5)
 Traceback (most recent call last):
 ...
 OverflowError: cannot convert float infinity to integer
 
+'no args'
 >>> add_integer()
 Traceback (most recent call last):
 ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+'one arg'
+>>> add_integer(5)
+103
+
+'b empty'
+>>> add_integer(5,)
+103
+
+'a float NaN'
+>>> add_integer(float('nan'), 5)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
