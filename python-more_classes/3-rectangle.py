@@ -28,11 +28,12 @@ class Rectangle:
 
     def __str__(self):
         str = ""
-        for i in range(self.__height):
-            for ii in range(self.__width):
-                str += "#"
-            if i + 1 != self.__height:
-                str += "\n"
+        if self.__width != 0 and self.__width != 0:
+            for i in range(self.__height):
+                for ii in range(self.__width):
+                    str += "#"
+                if i + 1 != self.__height:
+                    str += "\n"
         return str
 
     @property
