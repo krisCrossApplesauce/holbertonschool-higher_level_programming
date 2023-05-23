@@ -15,6 +15,7 @@ def matrix_divided(matrix, div):
         div_matrix.append([])
         for ii in matrix[i]:
             if type(ii) != float and type(ii) != int:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix" + \
+                                "(list of lists) of integers/floats")
             div_matrix[i].append(round(ii / div, 2))
     return div_matrix
