@@ -1,0 +1,5 @@
+'Tests for 1-my_list.py'
+
+>>> import sys
+
+>>> MyList = __import__('1-my_list').MyList
