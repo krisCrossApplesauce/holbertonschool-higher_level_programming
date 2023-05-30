@@ -3,4 +3,5 @@
 
 
 def lookup(obj):
+    """it does things"""
     return dir(obj)
