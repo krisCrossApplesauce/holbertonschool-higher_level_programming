@@ -17,6 +17,6 @@ text_indentation("Hello.hi")
 print("\n--")
 text_indentation("Hello?.hi")
 print("\n--")
-text_indentation("Holberton. School? How are you: John")
+text_indentation("Holberton. School? How are you:   John")
 print("\n--")
 
