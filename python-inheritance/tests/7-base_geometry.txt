@@ -3,3 +3,80 @@
 >>> import sys
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+'area'
+>>> a_shape = BaseGeometry()
+>>> a_shape.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+'no args'
+>>> b_shape = BaseGeometry()
+>>> b_shape.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+'one arg'
+>>> c_shape = BaseGeometry()
+>>> c_shape.integer_validator("number")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+'value is 0'
+>>> d_shape = BaseGeometry()
+>>> d_shape.integer_validator("number", 0)
+Traceback (most recent call last):
+...
+ValueError: number must be greater than zero
+
+'value is negative'
+>>> e_shape = BaseGeometry()
+>>> e_shape.integer_validation("number", -1)
+Traceback (most recent call last):
+...
+ValueError: number must be greater than zero
+
+'value is a string'
+>>> f_shape = BaseGeometry()
+>>> f_shape.integer_validation("number", "7")
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+'value is incomplete tuple'
+>>> g_shape = BaseGeometry()
+>>> g_shape.integer_validation("number", (4,))
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+'value is an erray with one element'
+>>> h_shape = BaseGeometry()
+>>> h_shape.integer_validation("number", [9])
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+'value is a boolean'
+>>> i_shape = BaseGeometry()
+>>> i_shape.integer_validator("number", False)
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+'value is an array'
+>>> j_shape = BaseGeometry()
+>>> j_shape.integer_validator("number", {1, 2})
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+'value is None'
+>>> k_shape = BaseGeometry()
+>>> k_shape.integer_validator("number", None)
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
