@@ -1,0 +1,25 @@
+'Tests for 3-say_my_name'
+
+>>> import sys
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+'control test'
+>>> say_my_name("Mr. Poopy", "Face")
+My name is Mr. Poopy Face
+
+'first_name is an int'
+>>> say_my_name(15, "poopoo")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+'last name is a boolean'
+>>> say_my_name("peepee", True)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+'only one arg'
+>>> say_my_name("silly")
+My name is silly 
