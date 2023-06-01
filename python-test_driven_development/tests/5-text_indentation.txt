@@ -1,0 +1,26 @@
+'Tests for 5-text_indentation'
+
+>>> import sys
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+'control test'
+>>> text_indentation("Hi: Hello? Hello.")
+Hi:
+<BLANKLINE>
+Hello?
+<BLANKLINE>
+Hello.
+<BLANKLINE>
+
+'text is an int'
+>>> text_indentation(45)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'no arg'
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
