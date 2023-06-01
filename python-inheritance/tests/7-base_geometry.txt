@@ -30,14 +30,14 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 >>> d_shape.integer_validator("number", 0)
 Traceback (most recent call last):
 ...
-ValueError: number must be greater than zero
+ValueError: number must be greater than 0
 
 'value is negative'
 >>> e_shape = BaseGeometry()
 >>> e_shape.integer_validator("number", -1)
 Traceback (most recent call last):
 ...
-ValueError: number must be greater than zero
+ValueError: number must be greater than 0
 
 'value is a string'
 >>> f_shape = BaseGeometry()
