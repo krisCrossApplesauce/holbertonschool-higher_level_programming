@@ -34,28 +34,28 @@ ValueError: number must be greater than zero
 
 'value is negative'
 >>> e_shape = BaseGeometry()
->>> e_shape.integer_validation("number", -1)
+>>> e_shape.integer_validator("number", -1)
 Traceback (most recent call last):
 ...
 ValueError: number must be greater than zero
 
 'value is a string'
 >>> f_shape = BaseGeometry()
->>> f_shape.integer_validation("number", "7")
+>>> f_shape.integer_validator("number", "7")
 Traceback (most recent call last):
 ...
 TypeError: number must be an integer
 
 'value is incomplete tuple'
 >>> g_shape = BaseGeometry()
->>> g_shape.integer_validation("number", (4,))
+>>> g_shape.integer_validator("number", (4,))
 Traceback (most recent call last):
 ...
 TypeError: number must be an integer
 
 'value is an erray with one element'
 >>> h_shape = BaseGeometry()
->>> h_shape.integer_validation("number", [9])
+>>> h_shape.integer_validator("number", [9])
 Traceback (most recent call last):
 ...
 TypeError: number must be an integer
