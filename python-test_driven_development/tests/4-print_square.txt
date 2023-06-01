@@ -1,0 +1,36 @@
+'Tests for 4-print_square'
+
+>>> import sys
+
+>>> print_square = __import__("4-print_square").print_square
+
+'control test'
+>>> print_square(4)
+####
+####
+####
+####
+
+'size is a boolean'
+>>> print_square(True)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+'size is negative'
+>>> print_square(-5)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+'size is a negative float'
+>>> print_square(-5.36)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+'size is a positive float'
+>>> print_square(3.4)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
