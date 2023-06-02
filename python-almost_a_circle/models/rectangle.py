@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""
-Update the class Rectangle
-by adding validation of all setter methods and instantiation
-(id excluded)
-"""
+""" class Rectangle that inherits from Base """
 from models.base import Base
 
 
 class Rectangle(Base):
     """
     a rectangle
-    but now with validation of all setter methods and instantiation
+    but now with area
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -38,6 +34,9 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = y
+
+    def area(self):
+        return (self.__width * self.__height)
 
     @property
     def width(self):
