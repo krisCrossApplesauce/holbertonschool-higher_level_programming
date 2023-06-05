@@ -6,7 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     """
     a rectangle
-    but now with display
+    but now with __str__
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -45,6 +45,10 @@ class Rectangle(Base):
             for ii in range(self.__width):
                 print("#", end='')
             print("")
+
+    def __str__(self):
+        """ returns info about the rectangle """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     @property
     def width(self):
