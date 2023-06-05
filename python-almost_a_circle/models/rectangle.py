@@ -32,19 +32,15 @@ class Rectangle(Base):
         else:
             self.__y = y
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns an argument to each attribute """
-        if args is not None:
-            if len(args) > 0:
-                self.id = args[0]
-            if len(args) > 1:
-                self.__width = args[1]
-            if len(args) > 2:
-                self.__height = args[2]
-            if len(args) > 3:
-                self.__x = args[3]
-            if len(args) > 4:
-                self.__y = args[4]
+        attributes = ["id", "width", "height", "x", "y"]
+        if args and len(args) > 0:
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def area(self):
         """ returns the area of the rectangle """
