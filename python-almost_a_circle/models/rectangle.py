@@ -35,10 +35,10 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ assigns an argument to each attribute """
         attributes = ["id", "width", "height", "x", "y"]
-        if args and len(args) > 0:
+        if args is not None and len(args) > 0:
             for attr, value in zip(attributes, args):
                 setattr(self, attr, value)
-        else:
+        elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
