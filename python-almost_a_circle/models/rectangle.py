@@ -4,10 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    a rectangle
-    but now with __str__
-    """
+    """ a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         if type(width) is not int:
@@ -41,7 +38,11 @@ class Rectangle(Base):
 
     def display(self):
         """ prints the rectangle using #'s to stdout """
+        for iii in range(self.__y):
+            print("")
         for i in range(self.__height):
+            for iv in range(self.__x):
+                print(" ", end='')
             for ii in range(self.__width):
                 print("#", end='')
             print("")
