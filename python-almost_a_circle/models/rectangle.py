@@ -52,7 +52,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        return self.__X
+        return self.__x
 
     @property
     def y(self):
