@@ -10,7 +10,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.width
+        return self.__width
 
     @size.setter
     def size(self, value):
@@ -19,8 +19,8 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.width = value
-            self.height = value
+            self.__width = value
+            self.__height = value
 
     def update(self, *args, **kwargs):
         """ assigns an assignment to each attribute """
@@ -28,19 +28,19 @@ class Square(Rectangle):
         if args is not None and len(args) > 0:
             for attr, value in zip(attributes, args):
                 if attr == "size":
-                    self.width = value
-                    self.height = value
+                    self.__width = value
+                    self.__height = value
                 else:
                     setattr(self, attr, value)
         elif kwargs is not None:
             for key, value in kwargs.items():
                 if key == "size":
-                    self.width = value
-                    self.height = value
+                    self.__width = value
+                    self.__height = value
                 else:
                     setattr(self, key, value)
 
     def __str__(self):
         """ it returns info about the square """
         return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.width)
+            self.id, self.__x, self.__y, self.__width)

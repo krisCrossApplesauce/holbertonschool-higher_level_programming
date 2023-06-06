@@ -7,40 +7,10 @@ class Rectangle(Base):
     """ a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-
-    def update(self, *args, **kwargs):
-        """ assigns an argument to each attribute """
-        attributes = ["id", "width", "height", "x", "y"]
-        if args is not None and len(args) > 0:
-            for attr, value in zip(attributes, args):
-                setattr(self, attr, value)
-        elif kwargs is not None:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def area(self):
-        """ returns the area of the rectangle """
-        return (self.__width * self.__height)
-
-    def display(self):
-        """ prints the rectangle using #'s to stdout """
-        for iii in range(self.__y):
-            print("")
-        for i in range(self.__height):
-            for iv in range(self.__x):
-                print(" ", end='')
-            for ii in range(self.__width):
-                print("#", end='')
-            print("")
-
-    def __str__(self):
-        """ returns info about the rectangle """
-        return "[Rectangle] ({}) {}/{} - {}/{}"\
-            .format(self.id, self.__x, self.__y, self.__width, self.__height)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -93,3 +63,43 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+
+    def update(self, *args, **kwargs):
+        """ assigns an argument to each attribute """
+        attributes = ["id", "width", "height", "x", "y"]
+        if args is not None and len(args) > 0:
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def area(self):
+        """ returns the area of the rectangle """
+        return (self.__width * self.__height)
+
+    def display(self):
+        """ prints the rectangle using #'s to stdout """
+        for iii in range(self.__y):
+            print("")
+        for i in range(self.__height):
+            for iv in range(self.__x):
+                print(" ", end='')
+            for ii in range(self.__width):
+                print("#", end='')
+            print("")
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle """
+        return {
+            "id": self.id,
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.__x,
+            "y": self.__y
+        }
+
+    def __str__(self):
+        """ returns info about the rectangle """
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
