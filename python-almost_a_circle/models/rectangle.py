@@ -7,30 +7,10 @@ class Rectangle(Base):
     """ a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        elif width <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self.__width = width
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        elif height <= 0:
-            raise ValueError("height must be > 0")
-        else:
-            self.__height = height
-        if type(x) is not int:
-            raise TypeError("x must be an integer")
-        elif x < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self.__x = x
-        if type(y) is not int:
-            raise TypeError("y must be an integer")
-        elif y < 0:
-            raise ValueError("y must be >= 0")
-        else:
-            self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def update(self, *args, **kwargs):
         """ assigns an argument to each attribute """
