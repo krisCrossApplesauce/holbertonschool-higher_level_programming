@@ -1,0 +1,2 @@
+-- comment
+SHOW TABLES;
