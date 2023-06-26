@@ -1,4 +1,4 @@
 -- comment
 ALTER TABLE first_table
-ADD id VARCHAR(89)
-ADD name Best School;
+MODIFY id VARCHAR(89)
+MODIFY name Best School;
