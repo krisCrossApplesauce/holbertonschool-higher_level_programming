@@ -1,2 +1,2 @@
 -- comment
-DESC first_table;
+SELECT * FROM first_table;
