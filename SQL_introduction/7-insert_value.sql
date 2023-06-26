@@ -1,4 +1,3 @@
 -- comment
-ALTER TABLE first_table
-MODIFY id VARCHAR(89)
-MODIFY name Best School;
+INSERT INTO first_table (id, name)
+VALUES (89, "Best School");
