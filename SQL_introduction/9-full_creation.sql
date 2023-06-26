@@ -5,11 +5,4 @@ CREATE TABLE IF NOT EXISTS second_table (
     score INT
 )
 INSERT INTO (id, name, score)
-SELECT 1, "John", 10
-UNION ALL
-SELECT 2, "Alex", 3
-UNION ALL
-SELECT 3, "Bob", 14
-UNION ALL
-SELECT 4, "George", 8
-UNION ALL;
+VALUES (1, "John", 10), (2, "Alex", 3), (3, "Bob", 14), (4, "George", 8);
