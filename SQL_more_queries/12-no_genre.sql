@@ -1,5 +1,6 @@
 -- import same database from 10 & 11, list all shows contained in hbtn_0d_tvshows without a genre linked
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
-FULL JOIN tv_show_genres ON tv_shows.id=tv_show_genres.show_id
+LEFT JOIN tv_show_genres ON tv_shows.id=tv_show_genres.show_id
+WHEN tv_show_genres.genre_id = NULL
 ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
