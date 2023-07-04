@@ -12,6 +12,9 @@ def list_states():
 
     curs = db.cursor()
     curs.execute("SELECT * FROM states ORDER BY states.id ASC")
+    rows = curs.fetchall()
+    for r in rows:
+        print(r)
 
     db.close()
 
