@@ -16,7 +16,7 @@ def cities_by_state():
 
     comm = "SELECT cities.id, cities.name, states.name\
             FROM cities LEFT JOIN states ON cities.state_id=states.id\
-            WHERE state.name = %s ORDER BY cities.id ASC"
+            WHERE states.name = %s ORDER BY cities.id ASC"
     curs.execute(comm, (sys.argv[4],))
 
     rows = curs.fetchall()
