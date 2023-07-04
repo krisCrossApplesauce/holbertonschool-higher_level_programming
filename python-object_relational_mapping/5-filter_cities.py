@@ -21,7 +21,7 @@ def cities_by_state():
 
     rows = curs.fetchall()
 
-    for i in range(len(rows) - 1):
+    for i in range(len(rows)):
         print(rows[i][0], end="")
         if i < len(rows):
             print("", end=", ")
