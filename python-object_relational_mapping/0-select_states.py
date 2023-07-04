@@ -8,7 +8,7 @@ import sys
 
 def list_states():
     """ does something """
-    db = MySQLdb.connect(host="localhost", username=sys.argv[0], password=sys.argv[1], name=sys.argv[2])
+    db = MySQLdb.connect(host="localhost", user=sys.argv[0], password=sys.argv[1], name=sys.argv[2])
 
     curs = db.cursor()
     curs.execute("SELECT * FROM states ORDER BY states.id ASC")
