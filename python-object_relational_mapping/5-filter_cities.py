@@ -14,14 +14,18 @@ def cities_by_state():
 
     curs = db.cursor()
 
-    comm = "SELECT cities.id, cities.name, states.name\
-            FROM cities LEFT JOIN states ON cities.state_id=states.id\
-            WHERE states.name = %s ORDER BY cities.id ASC"
-    curs.execute(comm, (sys.argv[4],))
+    cmnd = "SELECT cities.name FROM cities JOIN states\
+            ON cities.state_id = states.id WHERE states.name = %s\
+            ORDER BY cities.id ASC"
+    curs.execute(cmnd, (sys.argv[4],))
 
     rows = curs.fetchall()
-    for r in rows:
-        print(r)
+
+    for i in range(len(rows) - 1):
+        print(rows[i][0], end="")
+        if i < len(rows):
+            print("", end=", ")
+    print()
 
     db.close()
 
