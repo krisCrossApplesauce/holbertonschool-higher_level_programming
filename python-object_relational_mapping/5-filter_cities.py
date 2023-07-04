@@ -23,7 +23,7 @@ def cities_by_state():
 
     for i in range(len(rows)):
         print(rows[i][0], end="")
-        if i < len(rows):
+        if i < len(rows) - 1:
             print("", end=", ")
     print()
 
