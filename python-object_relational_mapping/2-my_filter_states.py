@@ -15,8 +15,8 @@ def my_filter_states():
 
     curs = db.cursor()
 
-    curs.execute(f"SELECT * FROM states WHERE name LIKE BINARY\
-                 '{sys.argv[4]}' ORDER BY id ASC")
+    curs.execute("SELECT * FROM states WHERE name LIKE BINARY\
+                 '{}' ORDER BY states.id ASC".format(sys.argv[4]))
     rows = curs.fetchall()
     for r in rows:
         print(r)
