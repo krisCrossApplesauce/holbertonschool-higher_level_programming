@@ -7,7 +7,7 @@ if (parseInt(args[2])) {
     width += 'X';
   }
   for (let i = 0; i < parseInt(args[2]); i++) {
-    console.log(width)
+    console.log(width);
   }
 } else {
   console.log('Missing size');
