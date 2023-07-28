@@ -2,14 +2,10 @@
 const process = require('process');
 const args = process.argv;
 function factorial (a) {
-  let n = 0;
+  let n = 1;
   for (let i = 1; i <= a; i++) {
-    n += i;
+    n = n * i;
   }
   console.log(n);
 }
-if (parseInt(args[2])) {
-  factorial(parseInt(args[2]));
-} else {
-  factorial(1);
-}
+factorial(parseInt(args[2]));
