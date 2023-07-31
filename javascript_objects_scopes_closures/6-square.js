@@ -11,7 +11,7 @@ class Square extends OriginalSquare {
       c = 'X';
     }
     let w = '';
-    while (w.length < this.width) {
+    while ((w.length / c.length) < this.width) {
       w += c;
     }
     for (let i = 0; i < this.height; i++) {
