@@ -4,7 +4,8 @@ const request = require('request');
 request(process.argv[2], function (err, response, body) {
   if (err) { console.log(err); }
   const taskList = JSON.parse(body);
-  let usrsDoneTasks = {};
+  const usrsDoneTasks = {};
+  let count = 0;
   for (const task of taskList) {
     if (usrsDoneTasks[task.userId] && (usrsDoneTasks[task.completed] === true)) {
       count += 1;
