@@ -7,7 +7,7 @@ request(process.argv[2], function (err, response, body) {
   const usrsDoneTasks = {};
   for (const task of taskList) {
     if (task.completed) {
-      if (usrsDoneTasks[task.userId]){
+      if (usrsDoneTasks[task.userId]) {
         usrsDoneTasks[task.userId] += 1;
       } else {
         usrsDoneTasks[task.userId] = 1;
